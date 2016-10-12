@@ -2,7 +2,7 @@ package us.aharon.randomstream
 
 import com.google.protobuf.Timestamp
 import io.grpc.ServerBuilder
-import io.grpc.stub.StreamObserver
+import io.grpc.stub.ServerCallStreamObserver
 
 import java.util.logging.Logger
 import java.util.*
@@ -19,7 +19,7 @@ import us.aharon.randomstream.server.RandomStreamService
 fun main(args: Array<String>) {
     val port = 9000
     val log = Logger.getLogger("RandomStream Server")
-    val randomStreamClientList = Vector<StreamObserver<RandomValue>>()
+    val randomStreamClientList = Vector<ServerCallStreamObserver<RandomValue>>()
     val randomValueGenerator = fixedRateTimer(null, true, 100, 500) {
         val randomValue = Random().nextLong()
         log.info("Generated random value: " + randomValue)
