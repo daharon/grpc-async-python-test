@@ -1,0 +1,8 @@
+
+Generate from protobufs:
+
+$ python -m grpc.tools.protoc \
+         -I../server/random-stream-server/src/main/proto/ \
+         --python_out=./generated/protobuf \
+         --grpc_python_out=./generated/protobuf \
+         ../server/random-stream-server/src/main/proto/random_stream.proto

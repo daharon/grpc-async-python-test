@@ -52,6 +52,9 @@
             </extension>
         </extensions>
         <plugins>
+            <!--
+                Compile protobufs for gRPC
+            -->
             <plugin>
                 <groupId>org.xolstice.maven.plugins</groupId>
                 <artifactId>protobuf-maven-plugin</artifactId>
@@ -71,9 +74,22 @@
                         <goals>
                             <goal>compile</goal>
                             <goal>compile-custom</goal>
+                        </goals>
+                    </execution>
+                    <!--
+                    <execution>
+                        <id>compile-python</id>
+                        <configuration>
+                            <protocPlugins>
+                                <protocPlugin>grpc_python_plugin</protocPlugin>
+                            </protocPlugins>
+                            <outputDirectory>${project.basedir}/../../common/python</outputDirectory>
+                        </configuration>
+                        <goals>
                             <goal>compile-python</goal>
                         </goals>
                     </execution>
+                    -->
                 </executions>
             </plugin>
 

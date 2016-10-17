@@ -20,7 +20,8 @@ fun main(args: Array<String>) {
     val port = 9000
     val log = Logger.getLogger("RandomStream Server")
     val randomStreamClientList = Vector<ServerCallStreamObserver<RandomValue>>()
-    val randomValueGenerator = fixedRateTimer(null, true, 100, 500) {
+
+    fixedRateTimer(daemon = true, initialDelay = 100, period = 500) {
         val randomValue = Random().nextLong()
         log.info("Generated random value: " + randomValue)
         val millis = System.currentTimeMillis()
