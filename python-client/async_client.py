@@ -20,7 +20,7 @@ def print_random_values(listener: int, cancel: threading.Event):
     random_stream = random_stream_pb2.RandomStreamStub(channel)
 
     for random_value in random_stream.Read(Empty()):
-        print('Listener {} read value: {:X}'.format(listener, random_value.value))
+        print('Listener {} read value: 0x{:X}'.format(listener, random_value.value))
         if cancel.is_set():
             return
 
@@ -43,5 +43,3 @@ if __name__ == '__main__':
         executor.shutdown(wait=True)
 
     loop.stop()
-
-
