@@ -2,5 +2,7 @@
 <!-- Komodo Project File - DO NOT EDIT -->
 <project id="0d4e9a00-0ba5-f340-9a7a-8ac523826f50" kpf_version="5" name="python-client.komodoproject">
 <preference-set idref="0d4e9a00-0ba5-f340-9a7a-8ac523826f50" id="project" preftype="project">
+  <long id="prefs_version">1</long>
+  <string relative="path" id="python3ExtraPaths">env/lib/python3.5/site-packages</string>
 </preference-set>
 </project>
